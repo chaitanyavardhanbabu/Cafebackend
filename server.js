@@ -15,7 +15,7 @@ const dbpass = encodeURIComponent(process.env.DBPASS)
 //   });
 // });
 
- mongoose.connect(process.env.MONGOOSE_URL).then(() => {
+ mongoose.connect(`mongodb+srv://${dbuser}:${dbpass}@cluster0.oxnegvy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0;`).then(() => {
   app.listen(8080, () => {
     console.log("Server started");
   });
