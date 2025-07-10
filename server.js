@@ -2,8 +2,10 @@ import express from "express";
 import mongoose from "mongoose";
 import userRouter from "./routers/userroute.js";
 import env from "dotenv";
+import cors from "cors";
 env.config();
 const app = express();
+app.use(cors())
 app.use(express.json());
 
 const dbuser = encodeURIComponent(process.env.DBUSER)
